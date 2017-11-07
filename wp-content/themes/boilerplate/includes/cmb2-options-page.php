@@ -3,19 +3,19 @@
  * CMB2 Theme Options
  * @version 0.1.0
  */
-class utehomelessness_Fields {
+class Fiftyboilerplate_Fields {
 
   /**
    * Option key, and option page slug
    * @var string
    */
-  private $key = 'utehomelessness_options';
+  private $key = 'fiftyboilerplate_options';
 
   /**
    * Options page metabox id
    * @var string
    */
-  private $metabox_id = 'utehomelessness_option_metabox';
+  private $metabox_id = 'fiftyboilerplate_option_metabox';
 
   /**
    * Options Page title
@@ -129,14 +129,14 @@ class utehomelessness_Fields {
 
 
 /**
- * Helper function to get/return the utehomelessness_Fields object
+ * Helper function to get/return the Fiftyboilerplate_Fields object
  * @since  0.1.0
- * @return utehomelessness_Fields object
+ * @return Fiftyboilerplate_Fields object
  */
-function utehomelessness_admin() {
+function fiftyboilerplate_admin() {
   static $object = null;
   if ( is_null( $object ) ) {
-    $object = new utehomelessness_Fields();
+    $object = new Fiftyboilerplate_Fields();
     $object->hooks();
   }
 
@@ -149,9 +149,9 @@ function utehomelessness_admin() {
  * @param  string  $key Options array key
  * @return mixed        Option value
  */
-function utehomelessness_get_option( $key = '' ) {
-  return cmb2_get_option( utehomelessness_admin()->key, $key );
+function fiftyboilerplate_get_option( $key = '' ) {
+  return cmb2_get_option( fiftyboilerplate_admin()->key, $key );
 }
 
 // Get it started
-utehomelessness_admin();
+fiftyboilerplate_admin();

@@ -5,7 +5,7 @@
 
 
 
-function utehomelessness_the_featured_image( $size )
+function fiftyboilerplate_the_featured_image( $size )
 {
   global $post;
   $size    = isset( $size ) ? $size : 'full';
