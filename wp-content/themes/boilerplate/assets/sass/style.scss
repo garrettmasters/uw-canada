@@ -29,9 +29,9 @@
  * Modules - Core
  */
 @import "modules/helpers",
-        "modules/plugins",
-        "modules/fonts",
-        "modules/animations";
+        // "modules/plugins",
+        "modules/fonts";
+        // "modules/animations";
  
 
 /**
@@ -42,12 +42,12 @@
         "modules/header",
         "modules/content",
         "modules/hero",
-        "modules/buttons",
-        "modules/slider",
-        "modules/forms",
+        // "modules/buttons",
+        // "modules/slider",
+        // "modules/forms",
         "modules/elements",
-        "modules/footer",
-        "modules/modals";
+        "modules/footer";
+        // "modules/modals";
 
 
 /**
