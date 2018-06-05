@@ -4,34 +4,36 @@
  * Font Family
  */
 $font-default							: "brandon-grotesque", "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-serif								: "ff-meta-serif-web-pro", "Georgia", Georgia, serif;
+$font-heading							: "ff-meta-serif-web-pro", "Georgia", Georgia, serif;
 $fa												: "FontAwesome", FontAwesome;
-
 
 
 /**
  * Colors
  */
 
-$color-primary            : #4ac2be; // Teal
-$color-primary-dark       : #31a9a5; // Teal darkened 10%
-$color-primary-light      : #64dcd8; // Teal lightened 10%
+$color-primary            : #4ac2be; // Primary Color : Teal : rgb value 
+$color-primary-dark       : darken($color-primary, 10%);
+$color-primary-light      : lighten($color-primary, 10%);
 
-$color-secondary          : #ffca61; // Yellow
-$color-secondary-dark     : #e6b148; // Yellow darkened 10%
-$color-secondary-light    : #ffe47b; // Yellow lightened 10%
+$color-secondary          : #ffca61; // Secondary Color : Yellow : rgb value
+$color-secondary-dark     : darken($color-secondary, 10%);
+$color-secondary-light    : lighten($color-secondary, 10%);
 
-$color-anchor-default     : #4ac2be; 
+$color-tertiary          : #ffca61; // Tertiary Color : Yellow : rgb value
+$color-tertiary-dark     : darken($color-tertiary, 10%); 
+$color-tertiary-light    : lighten($color-tertiary, 10%); 
 
 $color-gray       				: #2b2e33;
-$color-gray-dark  				: #12151a;
-$color-gray-light 				: #45484d;
+$color-gray-dark  				: darken($color-gray, 10%);
+$color-gray-light 				: lighten($color-gray, 10%);
 
-$color-offwhite         	: #f0f0f0; // Offwhite
+$color-black              : #000;
+$color-white         			: #fff;
 
+$color-anchor-default     : #4ac2be; 
 $color-text-default     	: #262729;
 $color-text-light         : #595a5c;
-
 
 $color-success          	: #94df60;
 $color-error            	: #e16060;
