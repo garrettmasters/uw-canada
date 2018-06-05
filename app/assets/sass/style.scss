@@ -3,7 +3,7 @@
  *
  * @note - use this rather than components.min.css to maintain relative paths
  */
-// @import "../components/font-awesome/css/font-awesome.min.css";
+@import "/components/font-awesome/css/font-awesome.min.css";
 // @import "../../components/animate/animate.min.css";
 
   
@@ -11,6 +11,7 @@
  * Functions & Mixins 
  */
 @import "mixins";
+@import "functions";
 
 
 /**
@@ -38,7 +39,6 @@
  * Modules - Components
  */
 @import "modules/body",
-        "modules/menu",
         "modules/header",
         "modules/content",
         "modules/hero",
@@ -48,17 +48,6 @@
         "modules/elements",
         "modules/footer",
         "modules/modals";
-
-
-/**
- * Modules - App specific
- */
-
-
-/**
- * Modules - Media Queries
- */
-@import "modules/media";
 
 
 /**

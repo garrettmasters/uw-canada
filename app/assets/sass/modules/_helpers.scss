@@ -1,9 +1,7 @@
 // _helpers.scss
 
-
-
 /**
- * Generate Padding/Margin Helpers
+ * Generate Margin/Padding Helpers
  */
 @for $i from 0 through 150 {
   @if $i % 10 == 0 {
@@ -38,4 +36,135 @@
   @if $i % 10 == 0 {
     .rotate#{$i}  { transform: rotate(#{$i}deg); }
   }
+}
+
+
+
+
+
+/**
+ * Generate Helper Clases
+ * @usage example: @extend %vertical-align || add class directly to element
+ */
+
+/**
+ * Vertical Align Helpers
+ */
+.vertical-align, %vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+}
+
+.v-align, %v-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); 
+}
+
+/**
+ * Text Alignment
+ */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+
+/**
+ * Image Cover 
+ */
+%img-cover, .img-cover {
+  object-fit: cover;
+  object-position: 50% 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%bg-cover, .bg-cover {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+/**
+ * Transistions
+ * @usage: utilizes transition mixin @extend %transit-100 || add class directly to element
+ */
+.transit-100, %transit-100 {
+  @include transition(all 100ms ease-in-out);
+}
+.transit-200, %transit-200 {
+  @include transition(all 200ms ease-in-out);
+}
+.transit-300, %transit-300 {
+  @include transition(all 100ms ease-in-out);
+}
+
+
+/**
+ * Hide and Show Mobile
+ */
+.mb-hd {
+  display: block;
+  
+  @include media ('mobile') {
+    display: none;
+  }
+}
+
+.mb-sh {
+  display: none;
+  
+  @include media ('mobile') {
+    display: block;
+  }
+}
+
+
+/**
+ * Color & General Alignment Helpers
+ */
+.centered {
+  // margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  float:none !important;
+}
+//Primary Color
+.color-primary {
+  color: $color-primary;  
+}
+.bg-primary {
+  background-color: $color-primary;
+}
+//Secondary Color
+.color-secondary {
+  color: $color-secondary;
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}
+//Tertiary Color
+.color-tertiary {
+  color: $color-tertiary;
+}
+.bg-tertiary {
+  background-color: $color-tertiary;
 }
