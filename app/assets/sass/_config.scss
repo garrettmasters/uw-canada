@@ -3,8 +3,8 @@
 /**
  * Font Family
  */
-$font-default							: "brandon-grotesque", "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-heading							: "ff-meta-serif-web-pro", "Georgia", Georgia, serif;
+$font-heading							: "brandon-grotesque", "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-default							: "ff-meta-serif-web-pro", "Georgia", Georgia, serif;
 $fa												: "FontAwesome", FontAwesome;
 
 
@@ -12,15 +12,15 @@ $fa												: "FontAwesome", FontAwesome;
  * Colors
  */
 
-$color-primary            : #4ac2be; // Primary Color : Teal : rgb value 
+$color-primary            : #f8cbaf; // Primary Color Peach : rgb value 248, 203, 175
 $color-primary-dark       : darken($color-primary, 10%);
 $color-primary-light      : lighten($color-primary, 10%);
 
-$color-secondary          : #ffca61; // Secondary Color : Yellow : rgb value
+$color-secondary          : #94a8c9; // Secondary Color Blue : rgb value 148, 168, 201
 $color-secondary-dark     : darken($color-secondary, 10%);
 $color-secondary-light    : lighten($color-secondary, 10%);
 
-$color-tertiary          : #ffca61; // Tertiary Color : Yellow : rgb value
+$color-tertiary          : #80bcba; // Tertiary Color Teal : rgb value 128, 188, 186
 $color-tertiary-dark     : darken($color-tertiary, 10%); 
 $color-tertiary-light    : lighten($color-tertiary, 10%); 
 
