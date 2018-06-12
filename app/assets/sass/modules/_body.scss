@@ -55,7 +55,7 @@ h1,h2,h3,h4,h5,h6 {
 
 h1, .h1, %h1 {
   font-family: $font-heading;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 1px;
   @include fluid-type(320px, 1600px, 26px, 50px);
   @include fluid-line-height(320px, 1600px, 26px, 50px);
