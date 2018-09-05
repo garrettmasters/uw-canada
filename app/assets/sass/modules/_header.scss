@@ -1,6 +1,6 @@
 // _header.scss
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,100);
+
 
 .content {
   display:flex;
@@ -8,13 +8,13 @@
   align-items: center;
   position: absolute;
   height: 100vh;
-  width: 100vw;  
+  width: 100vw;
   z-index: 1;
   text-align:center;
   font-family: 'Roboto', sans-serif;
   color: black;
   h1 {
-    font-size: 60px;  
+    font-size: 60px;
     margin-bottom: 15px;
     font-weight: 300;
   }
@@ -31,7 +31,7 @@
   align-items: stretch;
   overflow: hidden;
   height: 100vh;
-  width: 100vw;  
+  width: 100vw;
   pointer-events:none;
 }
 
@@ -41,8 +41,8 @@
   align-items: center;
   position: absolute;
   height: 100vh;
-  width: 100vw;  
-  z-index: 3; 
+  width: 100vw;
+  z-index: 3;
   top: 0;
   left: 0;
   right: 0;
@@ -76,7 +76,7 @@
   &:nth-child(2) {
     flex:1 0 100%;
     background: transparent;
-  }  
+  }
     &:nth-child(odd){
       background: darken(dodgerblue,20%);
   }
@@ -108,12 +108,12 @@
     transition-delay: 0.5s;
   }
   .r1{
-    transform: translateX(-50%)translateY(-50%)rotate(-90deg);   
+    transform: translateX(-50%)translateY(-50%)rotate(-90deg);
   }
   .r2{
     transform: translateX(-50%)translateY(-50%)rotate(-180deg);
   }
-  
+
   &:hover{
       background: rgba(2, 89, 165, 1);
     div{
@@ -123,12 +123,12 @@
   &:active{
       box-shadow: none;
   }
-}  
+}
 
-body.menu-open {  
+body.menu-open {
   .menu-sliders:nth-child(2) {
      flex:0 0 0%;
-  } 
+  }
   .menu {
     transform: translateY(0%);
     visibility: visible;
@@ -136,14 +136,14 @@ body.menu-open {
   }
  .plus-btn {
     .r1{
-      transform: translateX(-50%)translateY(-50%)rotate(-45deg);   
+      transform: translateX(-50%)translateY(-50%)rotate(-45deg);
     }
     .r2{
       transform: translateX(-50%)translateY(-50%)rotate(-135deg);
-    }  
+    }
   }
 }
-  
+
 
 
 

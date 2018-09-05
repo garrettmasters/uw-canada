@@ -2,7 +2,7 @@
 
 $btn: (
   height: 50px,
-  padding: 0 25px,
+  padding: 10px 0px,
 );
 
 
@@ -10,4 +10,31 @@ $btn: (
  	height: map-get($btn, height);
 	padding: map-get($btn, padding);
 	@include transition(background 200ms ease-in-out, color 200ms ease-in-out);
+    color: $color-white;
+    text-align: center;
+    text-transform: uppercase;
+    border: 3px white solid;
+    font-weight: 500;
+    letter-spacing: 1.5;
+    font-family: $font-heading;
+    font-size: 20px;
+    &:hover {
+        background: $color-white;
+        color: $color-primary;
+    }
+    &.alt {
+        color: $color-primary;
+        border: 3px $color-primary solid;
+        &:hover {
+        background: $color-primary;
+        color: $color-white;
+    }
+    }
+    &.btn--black {
+        background: $color-black;
+        &:hover {
+            color: black;
+            background: $color-white;
+        }
+    }
 }

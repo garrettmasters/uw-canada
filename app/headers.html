@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Fifty Boilerplate Static</title>
+  <title>United Way</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,23 +13,53 @@
   <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon.png?v3">
   <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon.png?v3">
   <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon.png?v3"> -->
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Typekit -->
+  <link rel="stylesheet" href="https://use.typekit.net/vbp0per.css">
   <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
   <!-- Modernizr & Prefix Free (All other JS in footer) -->
   <script src="../components/prefix-free/prefixfree.min.js"></script>
-  
+
   <!-- Typekit -->
 
 
 </head>
 <body class="">
-  
-	<div id="app" class=""> 
+<div id=wrapper>
+	<div id="app" class="">
+    <header id="header" class="header">
+      <div class="logo">
+        <img src="assets/images/uw-logo.png">
+        <p class="header--text">United way</p>
+      </div>
+      <div class="hamburger">
+        <p class="translate"><a href="#" class="translate-en">En/</a><a href="#" class="translate-fa">Fa</a></p>
+        <span>
+          <a id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+        </span>
+      </div>
+      <nav id="nav" class="menu--overlay">
+        <ul class="menu--content">
+          <div class="menu--close">
+              <a id="menu-toggle" href="#menu-toggle" class="closebtn">&times;</a>
+          </div>
+          <div class="menu--items">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About United Way</a></li>
+              <li><a href="#">Creating Unignorable</a></li>
+              <li><a href="#">Local Issues</a></li>
+              <li><a href="#">Local Love</a></li>
+              <li><a href="#">Collabs</a></li>
+              <li><a href="#">Influencers</a></li>
+              <li><a href="#">Get Information</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
 
- 
 
 
 
@@ -37,11 +67,36 @@
 
 
 
-	<div id="modals"></div>  
 
+
+	<div id="modals"></div>
 
 	</div><!-- #app -->
-
+		    <div class="sign-up">
+        <h4>Get Involved</h4>
+        <p>Get involved and learn how you can make a difference in your own community.</p>
+        <form action="#">
+          <label for="email">Email Address</label><br/>
+          <input type="text" name="email" value="" placeholder="Email">
+          <br>
+          <div class="form--short">
+            <div>
+              <label for="firstname">First Name</label><br/>
+              <input type="text" name="firstname" value="" placeholder="John">
+            </div>
+            <div>
+              <label for="lastname">Last Name</label><br />
+              <input type="text" name="lastname" value="" placeholder="Smith">
+            </div>
+          </div>
+          <label for="postalcode">Postal Code</label><br/>
+          <input type="text" name="postalcode" value="" placeholder="Postal Code">
+          <br>
+          <input class="btn" type="submit" value="Submit">
+        </form>
+    </div>
+    <a href="#cta-toggle" id="cta-toggle" class="get-involved">Get involved</a>
+</div> <!-- #wrapper -->
 
 	<!-- jQuery CDN or localhost fallback -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -55,8 +110,9 @@
 	<!-- Main Application JS -->
 	<!-- <script src="assets/js/plugins.js"></script> -->
 	<script src="assets/js/app.js"></script>
-		
 
- 
-</body>
-</html>  
+
+
+	</body>
+</html>
+  

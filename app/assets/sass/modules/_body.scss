@@ -17,13 +17,13 @@ body {
   // height: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  
-  -moz-osx-font-smoothing: grayscale; 
+
+  -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
            font-smoothing: antialiased;
-    
+
    // -webkit-font-smoothing: subpixel-antialiased; //good for light weight fonts
-  
+
   &.body--signup {
     background-color: $color-primary;
   }
@@ -33,10 +33,10 @@ body {
 /**
  * Anchor
  */
-a { 
-  // text-decoration: none; 
+a {
+  text-decoration: none;
   color: inherit;
-  
+
   /* Transition */
   -webkit-transition: color 0.25s, background 0.25s;
   -moz-transition: color 0.25s, background 0.25s;
@@ -48,36 +48,40 @@ a {
 /**
  * Headers
  */
-h1,h2,h3,h4,h5,h6 {  
+h1,h2,h3,h4,h5,h6 {
   // line-height: 1;
   margin: 0;
 }
 
 h1, .h1, %h1 {
   font-family: $font-heading;
+  color: $color-white;
   font-weight: 300;
   letter-spacing: 1px;
-  @include fluid-type(320px, 1600px, 26px, 50px);
-  @include fluid-line-height(320px, 1600px, 26px, 50px);
+  @include fluid-type(320px, 1600px, 40px, 60px);
+  @include fluid-line-height(320px, 1600px, 55px, 79px);
 }
 
 h2, .h2, %h2 {
   font-family: $font-heading;
+  color: $color-white;
   font-weight: 700;
   letter-spacing: -1px;
   @include fluid-type(320px, 1600px, 24px, 40px);
-  @include fluid-line-height(320px, 1600px, 34px, 40px);
+  // @include fluid-line-height(320px, 1600px, 34px, 40px);
 }
 
 h3, .h3, %h3 {
+  color: $color-white;
   font-family: $font-heading;
   font-weight: 700;
-  @include fluid-type(320px, 1600px, 20px, 26px);
-  @include fluid-line-height(320px, 1600px, 26px, 36px);
+  @include fluid-type(320px, 1600px, 21px, 39px);
+  // @include fluid-line-height(320px, 1600px, 46px, 79px);
 }
 
 h4, .h4, %h4 {
   font-family: $font-heading;
+  color: $color-white;
   font-weight: 300;
   @include fluid-type(320px, 1600px, 20px, 26px);
   @include fluid-line-height(320px, 1600px, 30px, 36px);
@@ -100,24 +104,28 @@ h6, .h6, %h6 {
 
 p {
   font-weight: 300;
+  color: $color-white;
   @include fluid-type(320px, 1600px, 14px, 16px);
   @include fluid-line-height(320px, 1600px, 24px, 30px);
   -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 
   &.large {
     font-family: $font-default;
     @include fluid-type(320px, 1600px, 16px, 20px);
-    @include fluid-line-height(320px, 1600px, 26px, 26px);     
+    @include fluid-line-height(320px, 1600px, 26px, 26px);
   }
-  
+
   &.small {
     font-family: $font-default;
     @include fluid-type(320px, 1600px, 12px, 14px);
-    @include fluid-line-height(320px, 1600px, 24px, 24px);     
-  } 
+    @include fluid-line-height(320px, 1600px, 24px, 24px);
+  }
 }
-
+span {
+  font-family: $font-default;
+  font-size: 33px;
+}
 
 
 
@@ -133,7 +141,7 @@ cite {
   font-style: italic;
 }
 
-small { 
+small {
   // display:inline-block;
   font-size:13px;
   text-transform: uppercase;
@@ -167,7 +175,7 @@ figure {
  * Tables
  */
 table {
-  
+
   thead {}
 
   tbody {

@@ -54,32 +54,32 @@ $grid-columns : 12;
  * Columns
  */
 @for $i from 1 through $grid-columns {
-  
+
   $col_width : ( $grid-columns / $i );
 
-  .col-#{$i} { 
-    width: ( 100 /  $col_width ) * 1%; 
+  .col-#{$i} {
+    width: ( 100 /  $col_width ) * 1%;
     float: left;
   }
 
-  .col-push-#{$i} { 
+  .col-push-#{$i} {
     position: relative;
-    left: ( 100 /  $col_width ) * 1%; 
+    left: ( 100 /  $col_width ) * 1%;
   }
 
-  .col-pull-#{$i} { 
+  .col-pull-#{$i} {
     position: relative;
-    right: ( 100 /  $col_width ) * 1%; 
+    right: ( 100 /  $col_width ) * 1%;
   }
-  
-} 
-  
+
+}
+
   // Extra Column Classes
   .col-1-5 {
     float:left;
     width: 20%;
   }
-  
+
   // Special Naming
   .col--half {
     &:first-child { padding-right: 40px; }
@@ -96,23 +96,23 @@ $grid-columns : 12;
  * Media Queries
  */
 @include media(767px) {
-  
+
   @for $i from 1 through $grid-columns {
-    
+
     $col_width : ( $grid-columns / $i );
 
-    .col-#{$i} { 
-      width: 100%; 
+    .col-#{$i} {
+      width: 100%;
       float: left;
     }
 
-    .col-push-#{$i} { 
+    .col-push-#{$i} {
       left: auto;
     }
 
-    .col-pull-#{$i} { 
+    .col-pull-#{$i} {
       right: auto;
     }
-  } 
-  
+  }
+
 }

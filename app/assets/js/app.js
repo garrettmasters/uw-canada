@@ -17,7 +17,7 @@
    * config
    * data
    * $el
-   * 
+   *
    */
   app = {
 
@@ -114,7 +114,7 @@
       animating : false
     },
 
-    // Debug 
+    // Debug
     debug : {
       events : {
         'window' : {
@@ -138,12 +138,12 @@ $('.plus-btn').click(function(){
    * Init
    */
   app.init = function () {
-    
-    // Basics 
+
+    // Basics
     this.events()
     this.modals.init()
 
-    // Plugins 
+    // Plugins
     this.plugins.init()
 
     // Animations
@@ -177,13 +177,13 @@ $('.plus-btn').click(function(){
     },
 
     events: function() {
-    
+
 
     }
 
 
   }
-  
+
   /**
    * Slides (Sliding Tabs)
    */
@@ -220,7 +220,7 @@ $('.plus-btn').click(function(){
       // else {
       //   slideContainer.attr('data-active-tab', ''+ normalizedIndex +'')
       // }
-      
+
       /**
        * Mobile tab 'prev','next' classes
        */
@@ -288,7 +288,7 @@ $('.plus-btn').click(function(){
   app.plugins = {
 
     /**
-     * Plugin object name 
+     * Plugin object name
      * @example (window.<NAME>)
      */
     plugin : [
@@ -346,7 +346,7 @@ $('.plus-btn').click(function(){
 
         // Gallery (used with carousel as controlNav )
         gallery : {
-          
+
         },
 
       }
@@ -359,7 +359,7 @@ $('.plus-btn').click(function(){
       window.addEventListener('load', function (event) {
 
         $('.slider--basic').slick( options['basic'])
-        
+
         // app.$el.slider.basic.flexslider( options['basic'] )
 
       })
@@ -455,13 +455,13 @@ $('.plus-btn').click(function(){
           if( url_youtube.test(videoURL) ) {
             var detected_embed  = '<iframe width="1400" height="788" src="https://www.youtube.com/embed/$1?autoplay=1" frameborder="0" allowfullscreen></iframe>'
             var embed           = videoURL.replace(url_youtube, detected_embed)
-          } 
+          }
 
           if( url_image.test(videoURL) ) {
             var detected_embed  = '<a href="$1" target="_blank"><img class="sml" src="$1" /></a><br />'
             var embed           = videoURL.replace(url_image, detected_embed)
-          }          
-          
+          }
+
           // $(modalID).append(embed)
           $(modalID).children('.iframe-container').append(embed)
         }
@@ -471,9 +471,9 @@ $('.plus-btn').click(function(){
 
       // Add close event listener - ESC
       $(document).on('keyup', function (event) {
-        
+
         event.preventDefault()
-        
+
         var activeModal = $('.modal.show').attr('id'),
             activeModalID = '#'+activeModal;
 
@@ -489,7 +489,7 @@ $('.plus-btn').click(function(){
 
       // Add close event listener - .modal--close
       $(document).delegate(app.$el.modals.close.selector, 'click', function (event) {
-        
+
         event.preventDefault()
 
         var activeModal = $('.modal.show').attr('id'),
@@ -512,6 +512,17 @@ $('.plus-btn').click(function(){
           _this.modalClose(activeModalID)
         }
       })
+      // Toggle CTA Form
+      $(document).delegate('#cta-toggle', 'click', function (event) {
+      event.preventDefault();
+      $("#wrapper").toggleClass( "cta--toggled" );
+      });
+
+      // Toggle Menu
+      $(document).delegate('#menu-toggle', 'click', function (event) {
+      event.preventDefault();
+      $("#nav").toggleClass( "nav--toggled" );
+      });
 
     },
 
@@ -528,7 +539,7 @@ $('.plus-btn').click(function(){
 
       // Load any videos
 
-    
+
 
       // Toggle modal class
       $(targetID).toggleClass('show')
@@ -540,10 +551,10 @@ $('.plus-btn').click(function(){
             activeModalID = '#'+activeModal;
 
         if ( activeModal !== undefined ) { _this.modalClose(activeModalID) }
-          
+
       })
 
-      
+
       if ( app.config.debug ) console.log('%cDATA-CONTROL', 'color:'+app.console.color.control, '- modalShow with ID '+targetID)
 
     },
@@ -551,8 +562,8 @@ $('.plus-btn').click(function(){
 
     /**
      * modalClose
-     * 
-     * @param  {String} targetID 
+     *
+     * @param  {String} targetID
      */
     modalClose: function(targetID) {
 
@@ -590,13 +601,13 @@ $('.plus-btn').click(function(){
    * Compatibility
    */
   app.compatibility = {
-    
+
     init: function() {
 
       this.setBrowserBodyClass()
 
     },
-    
+
     setBrowserBodyClass: function() {
 
       var browser = getBrowserName()
@@ -606,7 +617,7 @@ $('.plus-btn').click(function(){
 
       $('body').addClass(browser)
     }
-    
+
   }
 
 
@@ -620,13 +631,13 @@ $('.plus-btn').click(function(){
 
   /**
    * Waypoint
-   * 
+   *
    * @param  {Object}   element  jQuery selector
-   * @param  {Function} callback 
+   * @param  {Function} callback
    */
   app.waypoint = function(element, offset, callback) {
 
-    if ( !element || element.length <= 0 ) return false; 
+    if ( !element || element.length <= 0 ) return false;
     var waypoint_passed = false;
 
     window.addEventListener('scroll', function (event) {
@@ -692,7 +703,7 @@ $('.plus-btn').click(function(){
         }
 
         if ( app.config.debug ) console.log('%cWAYPOINT', 'color:'+app.console.color.waypoint, $waypoint.selector, data )
-        
+
       })
 
     }
@@ -728,7 +739,7 @@ $('.plus-btn').click(function(){
         _this.stage_height = $(window).height()
       }, false)
     },
-    
+
     /**
      * On Scroll
      */
@@ -738,7 +749,7 @@ $('.plus-btn').click(function(){
       _this.last_known_y = window.pageYOffset;
       _this.requestTick()
     },
-    
+
     /**
      * Request Tick
      */
@@ -751,7 +762,7 @@ $('.plus-btn').click(function(){
       }
       _this.ticking = true;
     },
-    
+
     /**
      * Update
      */
@@ -760,18 +771,18 @@ $('.plus-btn').click(function(){
       var _this     = app.scroller,
           direction = {},
           y         = _this.last_known_y;
-          
+
       _this.ticking = false;
 
       direction.down = ( _this.previous_y > y ) ? false : true;
       direction.up   = ( _this.previous_y < y ) ? false : true;
-        
+
 
       /**
        * Animation Functions
        * Call animation frame functions here
        */
-      
+
 
 
       // Log {direction} and posY
@@ -792,9 +803,9 @@ $('.plus-btn').click(function(){
    * Animations
    */
   app.animations = {
-    
+
     $el : {
-      
+
     },
 
     /**
@@ -809,10 +820,10 @@ $('.plus-btn').click(function(){
      */
     onWindowLoad: function() {
 
-      
+
     },
 
-    
+
   }
 
 
@@ -847,7 +858,7 @@ $('.plus-btn').click(function(){
 
 
 
-  
+
 
 
 
@@ -864,19 +875,19 @@ $('.plus-btn').click(function(){
 
   /**
    *
-   * 
+   *
    * ---------------
    * Private Methods
    * ---------------
    *
-   * 
+   *
    */
-  
+
 
   /**
    * Inject Script
-   * 
-   * @param  {String} url 
+   *
+   * @param  {String} url
    */
   function injectScript(url) {
 
@@ -890,8 +901,8 @@ $('.plus-btn').click(function(){
 
   /**
    * Scroll To Element
-   * 
-   * @param  {Object} options 
+   *
+   * @param  {Object} options
    */
   function scrollToElement(options){
 
@@ -913,14 +924,14 @@ $('.plus-btn').click(function(){
       }
     }
   }
-  
+
   /**
    * Get Browser Name
-   * 
-   * @return {String} 
+   *
+   * @return {String}
    */
   function getBrowserName() {
-    var ua= navigator.userAgent, tem, 
+    var ua= navigator.userAgent, tem,
     M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if(/trident/i.test(M[1])){
         tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
@@ -934,16 +945,16 @@ $('.plus-btn').click(function(){
     if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
 
     if ( M[0].length > 0 ) {
-      return M[0].toLowerCase(); 
+      return M[0].toLowerCase();
     } else {
       return false;
     }
-    
+
   }
 
   /**
    * Detect if IE
-   * 
+   *
    * @return {Boolean}
    */
   function isIE() {
@@ -971,20 +982,20 @@ $('.plus-btn').click(function(){
 
   /**
    * Prevent Default Shim
-   * 
+   *
    * @param  {Object} e event
    */
   function preventDefault(e) {
     e = e || window.event;
     if (e.preventDefault)
     e.preventDefault();
-    e.returnValue = false;  
+    e.returnValue = false;
   }
 
   /**
    * Add Event Listeners
    * Add multiple event listeenrs
-   * 
+   *
    * @param {Object}   el - element (window, document)
    * @param {String}   s  - selector
    * @param {Function} fn - function to call
@@ -999,8 +1010,8 @@ $('.plus-btn').click(function(){
 
   /**
    * Remove Class Prefix
-   * 
-   * @param  {String} prefix 
+   *
+   * @param  {String} prefix
    */
   $.fn.removeClassPrefix = function(prefix) {
     this.each(function(i, el) {
@@ -1047,14 +1058,14 @@ $('.plus-btn').click(function(){
   function hasScrolled() {
     var st = $(this).scrollTop()
     var navbarHeight  = $('#header').outerHeight();
-    
+
     // Make sure they scroll more than delta
     if(Math.abs(lastScrollTop - st) <= delta)
       return;
 
     // console.log('st', st)
     // console.log('navbarHeight', navbarHeight)
-    
+
     // If they scrolled down and are past the navbar, add class .nav-up.
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight){
@@ -1066,7 +1077,7 @@ $('.plus-btn').click(function(){
           $('header').removeClass('header--hide').addClass('header--show');
       }
     }
-    
+
     lastScrollTop = st;
 
 
@@ -1078,12 +1089,12 @@ $('.plus-btn').click(function(){
 
   /**
    *
-   * 
+   *
    * ---------------
    * Event Listeners
    * ---------------
    *
-   * 
+   *
    */
 
 
@@ -1093,11 +1104,11 @@ $('.plus-btn').click(function(){
 
 
   /**
-   * EVENT: Document Ready
-   * @jquery - $(document).ready(function(){  })
+   * EVEN
+   * @jquery - $(document).ready(functioT: Document Readyn(){  })
    */
   document.addEventListener('DOMContentLoaded', function (event) {
-    
+
     app.init()
 
 
@@ -1108,9 +1119,9 @@ $('.plus-btn').click(function(){
    * @jquery - $(window).load(function(){  })
    */
   window.addEventListener('load', function (event) {
-      
+
     app.animations.onWindowLoad()
-    
+
   })
 
 
@@ -1120,7 +1131,7 @@ $('.plus-btn').click(function(){
    */
   addEventListeners(window, 'scroll resize orientationchange', function (event) {
 
-    _w.w = window.outerWidth, 
+    _w.w = window.outerWidth,
     _w.h = window.outerHeight,
     _w.t = document.documentElement.scrollTop || document.body.scrollTop,
     _w.l = document.documentElement.scrollLeft || document.body.scrollLeft;
@@ -1162,18 +1173,13 @@ $('.plus-btn').click(function(){
    */
   if ( screen ) {
     window.addEventListener('orientationchange', function (event) {
-        
-      _s.w = screen.availWidth, 
+
+      _s.w = screen.availWidth,
       _s.h = screen.availHeight,
       _s.o = screen.orientation.type;
 
     })
   }
 
-
-
-  
-  
-  
   return app;
 })(jQuery);
