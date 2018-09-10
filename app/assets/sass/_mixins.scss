@@ -25,8 +25,8 @@
 
 /**
  * Media
- * 
- * @param  {Integer} $screen 
+ *
+ * @param  {Integer} $screen
  */
 @mixin media( $screen ) {
   @if $screen == mobile {
@@ -42,7 +42,7 @@
   @else {
     @media screen and (max-width: $screen) {
       @content;
-    } 
+    }
   }
 }
 @mixin retina( ) {
@@ -53,7 +53,13 @@
 @mixin min( $screen ) {
   @media screen and (min-width: $screen) {
     @content;
-  } 
+  }
+}
+
+@mixin max( $screen ) {
+  @media screen and (max-width: $screen) {
+    @content;
+  }
 }
 
 

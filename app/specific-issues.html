@@ -31,10 +31,10 @@
 <div id=wrapper>
 	<div id="app" class="">
     <header id="header" class="header">
-      <div class="logo">
-        <img src="assets/images/uw-logo.png">
+      <a href="/index.html"><div class="logo">
+        <img src="assets/images/UnitedWay_Logo.svg">
         <p class="header--text">United way</p>
-      </div>
+      </div></a>
       <div class="hamburger">
         <p class="translate"><a href="#" class="translate-en">En/</a><a href="#" class="translate-fa">Fa</a></p>
         <span>
@@ -47,14 +47,13 @@
               <a id="menu-toggle" href="#menu-toggle" class="closebtn">&times;</a>
           </div>
           <div class="menu--items">
-              <li><a href="#">Home</a></li>
+              <li><a href="/index.html">Home</a></li>
               <li><a href="#">About United Way</a></li>
-              <li><a href="#">Creating Unignorable</a></li>
-              <li><a href="#">Local Issues</a></li>
-              <li><a href="#">Local Love</a></li>
-              <li><a href="#">Collabs</a></li>
-              <li><a href="#">Influencers</a></li>
-              <li><a href="#">Get Information</a></li>
+              <li><a href="/pantone.html">Creating Unignorable</a></li>
+              <li><a href="/local-issues.html">Local Issues</a></li>
+              <li><a href="/instagram.html">Local Love</a></li>
+              <li><a href="/collaboration.html">Collabs</a></li>
+              <!-- <li><a href="#cta-toggle" id="cta-toggle">Get Involved</a></li> -->
           </div>
         </ul>
       </nav>
@@ -68,15 +67,18 @@
         <div class="hero__inner">
             <div class="cta-box cta-box__header">
                 <h4>Help <br />Make</h4>
-                <h4>Local Issues
+                <h4>Collabs</h4>
                 <h4 class="color-primary">#Unignorable</h4>
             </div>
         </div>
     </div>
 </section>
 
-<section id="video">
-    <div class="bg-cover" style="background-image: url(/assets/images/video-placeholder.png);">
+<section class="video video-block">
+    <div class="mask">
+         <div class="video--block" style="background-image: url(/assets/images/video-placeholder.png);" data-control-modal="#modal--video" data-video-url="https://vimeo.com/87701971">
+       <img src="/assets/icons/play-button.svg"></a>
+    </div>
 </section>
 
 <section id="open-cta--white">
@@ -101,10 +103,8 @@
 
 <section class="video video-block">
     <div class="mask">
-       <video poster="/assets/images/video-placeholder.png" data-control-modal="#modal--video" data-video-url="https://vimeo.com/286754547" class="video" id="video">
-         <source src="/assets/video/PSA-5Billion.mov" type="video/mp4">
-       </video>
-       <i class="fa fa-play"></i>
+         <div class="video--block" style="background-image: url(/assets/images/video-placeholder.png);" data-control-modal="#modal--video" data-video-url="https://vimeo.com/87701971">
+       <img src="/assets/icons/play-button.svg"></a>
     </div>
 </section>
 
@@ -125,8 +125,11 @@
 </section>
 
 
-<section id="video">
-    <div class="bg-cover" style="background-image: url(/assets/images/video-placeholder.png);">
+<section class="video video-block">
+    <div class="mask">
+         <div class="video--block" style="background-image: url(/assets/images/video-placeholder.png);" data-control-modal="#modal--video" data-video-url="https://vimeo.com/87701971">
+       <img src="/assets/icons/play-button.svg"></a>
+    </div>
 </section>
 
 
@@ -134,33 +137,48 @@
 
 
 
-	<div id="modals"></div>
+	<div id="modals">
+    <div id="modal--video" class="modal">
+        <span><i class="fa fa-close modal-close"></i></span>
+        <div class="video-container"></div>
+    </div>
+</div>
+
 
 	</div><!-- #app -->
-		    <div class="sign-up">
-        <h4>Get Involved</h4>
-        <p>Get involved and learn how you can make a difference in your own community.</p>
-        <form action="#">
-          <label for="email">Email Address</label><br/>
-          <input type="text" name="email" value="" placeholder="Email">
-          <br>
-          <div class="form--short">
-            <div>
-              <label for="firstname">First Name</label><br/>
-              <input type="text" name="firstname" value="" placeholder="John">
-            </div>
-            <div>
-              <label for="lastname">Last Name</label><br />
-              <input type="text" name="lastname" value="" placeholder="Smith">
-            </div>
-          </div>
-          <label for="postalcode">Postal Code</label><br/>
-          <input type="text" name="postalcode" value="" placeholder="Postal Code">
-          <br>
-          <input class="btn" type="submit" value="Submit">
-        </form>
-    </div>
-    <a href="#cta-toggle" id="cta-toggle" class="get-involved">Get involved</a>
+	<div>
+		<div class="sign-up sign-up--start">
+	        <h4>Get Involved</h4>
+	        <p>Get involved and learn how you can make a difference in your own community.</p>
+	        <form action="#" class="form-group">
+	          <label for="email">Email Address</label><br/>
+	          <input type="text" name="email" value="" placeholder="Email">
+	          <br>
+	          <div class="form--short">
+	            <div>
+	              <label for="firstname">First Name</label><br/>
+	              <input type="text" name="firstname" value="" placeholder="John">
+	            </div>
+	            <div>
+	              <label for="lastname">Last Name</label><br />
+	              <input type="text" name="lastname" value="" placeholder="Smith">
+	            </div>
+	          </div>
+	          <label for="postalcode">Postal Code</label><br/>
+	          <input type="text" name="postalcode" value="" placeholder="Postal Code">
+	          <br>
+	          <input class="btn" type="submit" value="Submit">
+	        </form>
+	    </div>
+	    <div class="sign-up sign-up--success">
+	    	<div>
+		    	<h4>Success</h4>
+		        <p>Thank you, we're excited to work with you to make a difference in your community.</p>
+	    	</div>
+	        <a href="#" class="btn">Continue</a>
+	    </div>
+	    <a href="#cta-toggle" id="cta-toggle" class="get-involved">Get involved</a>
+	</div>
 </div> <!-- #wrapper -->
 
 	<!-- jQuery CDN or localhost fallback -->

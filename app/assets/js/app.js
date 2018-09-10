@@ -96,17 +96,17 @@
         control : $('*[data-control-modal]'),
         modal : $('.modal'),
         bay : $('#modals'),
-        close : $('.modal--close')
+        close : $('.modal-close')
       },
 
       loader : $('#loader'),
 
-      slider : {
-        basic    : $('.slider--basic'),
-        gallery  : $('.slider--gallery'),
-        carousel : $('.slider--carousel'),
-        framed   : $('.slider--framed'),
-      }
+      // slider : {
+      //   basic    : $('.slider--basic'),
+      //   gallery  : $('.slider--gallery'),
+      //   carousel : $('.slider--carousel'),
+      //   framed   : $('.slider--framed'),
+      // }
     },
 
     // Flags
@@ -302,7 +302,7 @@ $('.plus-btn').click(function(){
      */
     init: function() {
 
-      this.slick()
+      // this.slick()
       // this.polyfills()
 
     },
@@ -311,60 +311,59 @@ $('.plus-btn').click(function(){
     /**
      * Slick Slider
      */
-    slick: function() {
+    // slick: function() {
 
-      var _this = app.plugins;
+    //   var _this = app.plugins;
 
-      // if ( !$.slick ) return false;
+    //   // if ( !$.slick ) return false;
 
-      /**
-       * Slider Options
-       * @type {Object}
-       */
-      var options = {
-        // Basic (Default)
-        basic : {
-          fade: true,
-          arrows: true,
-          appendArrows: $('.slick-arrow-container'),
-          nextArrow: '<a class="icon icon-angle-right slick-arrow--next"></a>',
-          prevArrow: '<a class="icon icon-angle-left  slick-arrow--prev"></a>',
-          dots: true,
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true,
-                arrows: false,
-              }
-            },
-          ]
-        },
+    //   /**
+    //    * Slider Options
+    //    * @type {Object}
+    //    */
+    //   var options = {
+    //     // Basic (Default)
+    //     basic : {
+    //       fade: true,
+    //       arrows: true,
+    //       appendArrows: $('.slick-arrow-container'),
+    //       nextArrow: '<a class="icon icon-angle-right slick-arrow--next"></a>',
+    //       prevArrow: '<a class="icon icon-angle-left  slick-arrow--prev"></a>',
+    //       dots: false,
+    //       responsive: [
+    //         {
+    //           breakpoint: 768,
+    //           settings: {
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1,
+    //             infinite: true,
+    //             dots: true,
+    //             arrows: false,
+    //           }
+    //         },
+    //       ]
+    //     },
 
-        // Gallery (used with carousel as controlNav )
-        gallery : {
+    //     // Gallery (used with carousel as controlNav )
+    //     gallery : {
 
-        },
+    //     },
 
-      }
-
+    //   }
 
 
       /**
        * Event Listener: window onload
        */
-      window.addEventListener('load', function (event) {
+    //   window.addEventListener('load', function (event) {
 
-        $('.slider--basic').slick( options['basic'])
+    //     $('.slider--basic').slick( options['basic'])
 
-        // app.$el.slider.basic.flexslider( options['basic'] )
+    //     //app.$el.slider.basic.flexslider( options['basic'] )
+    //   })
 
-      })
+    // },
 
-    },
 
     /**
      * Polyfills
@@ -381,9 +380,6 @@ $('.plus-btn').click(function(){
 
 
   }
-
-
-
 
 
   /**
@@ -448,12 +444,12 @@ $('.plus-btn').click(function(){
           var url_image   = /([-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?(?:jpg|jpeg|gif|png))/gi
 
           if( url_vimeo.test(videoURL) ) {
-            var detected_embed  = '<iframe width="1400" height="788" src="//player.vimeo.com/video/$1?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+            var detected_embed  = '<iframe width="100%" height="100%" src="//player.vimeo.com/video/$1?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
             var embed           = videoURL.replace(url_vimeo, detected_embed);
           }
 
           if( url_youtube.test(videoURL) ) {
-            var detected_embed  = '<iframe width="1400" height="788" src="https://www.youtube.com/embed/$1?autoplay=1" frameborder="0" allowfullscreen></iframe>'
+            var detected_embed  = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/$1?autoplay=1" frameborder="0" allowfullscreen></iframe>'
             var embed           = videoURL.replace(url_youtube, detected_embed)
           }
 
@@ -463,7 +459,7 @@ $('.plus-btn').click(function(){
           }
 
           // $(modalID).append(embed)
-          $(modalID).children('.iframe-container').append(embed)
+          $(modalID).children('.video-container').append(embed)
         }
 
         _this.modalShow(modalID);
@@ -624,7 +620,18 @@ $('.plus-btn').click(function(){
 
 
 
-
+$('.slider--basic').slick({
+    dots: false,
+    fade: true,
+    arrows: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    pauseOnFocus: false,
+    pauseOnHover: false
+});
 
 
 

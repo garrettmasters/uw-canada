@@ -120,6 +120,10 @@ article {}
   left: -999em;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// CTA Box Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
 .cta-box {
     display: flex;
     flex-direction: column;
@@ -153,8 +157,22 @@ article {}
   }
   &.cta-box__header {
     max-width: 450px;
+    min-width: 400px;
+    min-height: 400px;
     align-items: flex-start;
+    justify-content: center;
     padding: 2em;
+    &.collabs {
+      height: 400px;
+      max-width: 450px;
+      min-width: 400px;
+      min-height: 400px;
+    }
+    @include media ('mobile') {
+      max-width: 350px;
+      min-width: 300px;
+      min-height: 300px;
+    }
     h4 {
       font-size: 3em;
       line-height: 1;
@@ -175,7 +193,6 @@ article {}
     }
   }
 }
-
 .cta-box--title {
       display: flex;
       align-items: center;
@@ -183,6 +200,8 @@ article {}
       padding: 30px;
       height: 350px;
       width: 400px;
+      min-width: 350px;
+      max-width: 450px;
       margin: 20px;
       @include media ('mobile') {
         // height: 80%;
@@ -194,7 +213,8 @@ height: 100%;
 justify-self: center;
 background-repeat: no-repeat;
 img {
-  width: 100%;
+  max-width: 500px;
+  width: 390px;
   object-fit: contain;
   padding: 20px;
 }
@@ -215,9 +235,14 @@ img {
   text-align: center;
     span {
       padding-bottom: 50px;
+      text-align: center;
     }
   }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Open CTA Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #open-cta {
@@ -240,12 +265,46 @@ img {
   }
 }
 
-#video {
-  height: 800px;
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Video Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.video {
+  // height: 800px;
+  display: block;
   @include media ('mobile') {
     height: 377px;
   }
+  .video--block{
+    height: 740px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    top: 0;
+    left: 0;
+    img {
+      color: #fff;
+      position: absolute;
+      width: 100px;
+      top: 39%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      margin-top: 40px;
+      z-index: 9;
+      border-radius: 50%;
+      padding: 20px 22px;
+    }
+    @include media ('mobile') {
+      height: 377px;
+  }
+  }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Open Colored background Interstitial
+// ~~~~~~~~~~~~~~~~~~~~~~~
 
 #open-cta--colored {
   background: $color-primary;
@@ -261,16 +320,25 @@ img {
       line-height: 1.5;
       text-transform: uppercase;
     }
+      @include media ('tablet') {
+        h4 {
+        font-size: 2.5em;
+        }
+      }
      @include media ('mobile') {
       flex-direction: column;
       align-items: center;
       padding: 55px 0;
       h4 {
-        font-size: 2em;
+        font-size: 2.2em;
       }
      }
   }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Open White Interstitial Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
 
 #open-cta--white {
   background: $color-white;
@@ -284,6 +352,9 @@ img {
       color: $color-white;
       @include media ('mobile') {
         font-size: 2em;
+      }
+      @include media ('tablet') {
+        font-size: 2.5em;
       }
       }
     }
@@ -303,6 +374,9 @@ img {
         color: $color-white;
 
         }
+      }
+      .btn--small {
+        max-width: 280px;
       }
       p {
         padding: 15px 0;
@@ -329,8 +403,22 @@ img {
   }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Prints Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
 #prints {
-    height: 800px;
+    height: 700px;
+    position: relative;
+    .cta-box {
+      position: absolute;
+      z-index: 12;
+      transform: translateY(40%);
+      right: 100px;
+      @include media ('mobile') {
+        display: none;
+      }
+    }
     @include media ('mobile') {
       height: 100%;
     }
@@ -340,9 +428,12 @@ img {
     background: $color-primary;
     display: flex;
     justify-content: center;
+    height: 600px;
       .cta-box {
       display: flex;
-      margin: 70px 20px;
+      right: inherit;
+      align-self: center;
+      transform: translateY(0%);
       }
     }
     }
@@ -360,6 +451,10 @@ img {
     }
   }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Apparel Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
 
 #apparel {
   .container {
@@ -389,6 +484,10 @@ img {
  }
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Header Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
 #header {
   position: fixed;
   background-color: #fff;
@@ -401,7 +500,7 @@ img {
   position: absolute;
   width: 100%;
   padding: 12px calc(100% - 95%);
-  z-index: 10;
+  z-index: 20;
   transition: all .5s ease-out;
   p.header--text {
     color: $color-gray;
@@ -443,7 +542,10 @@ img {
     }
   }
 }
-//Slide menu animation
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Slide Menu Animation Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
 // #wrapper {
 //   padding-right: 400px;
 //   transition: all .5s ease-out;
@@ -507,7 +609,9 @@ img {
 //       }
 
 
-// Fixed overlay menu
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Fixed Overlay Menu
+// ~~~~~~~~~~~~~~~~~~~~~~~
 
 #wrapper {
   transition: all .5s ease-out;
@@ -523,15 +627,23 @@ img {
     background: $color-primary;
     right: 0;
     top: 0;
-    z-index: 10;
+    z-index: 25;
     justify-content: center;
     overflow-y: auto;
     transition: all .5s ease-out;
+    @include media ('mobile') {
+      margin-right: 0;
+      margin-top: 100vh;
+      width: 100vw;
+    }
     h4 {
       text-transform: uppercase;
       font-weight: 700;
       font-size: 30px;
     }
+  }
+  .menu--items {
+    transition: all .5s ease-out;
   }
   &.cta--toggled {
     padding-right: 0;
@@ -540,17 +652,45 @@ img {
         opacity: 1;
         margin-right: 0;
         transition: all .5s ease-out;
+
+        @include media ('mobile') {
+          width: 100vw;
+          margin-top: 0;
+          right: 0;
+
+      .get-involved {
+        right: inherit;
+        transition: all .5s ease-out;
+        }
+      .menu--items {
+        padding-right: inherit;
+        }
+       }
       }
+
+      .sign-up--success {
+        justify-content: space-around;
+        display: none;
+      }
+      .sign-up--start {
+        // display: none;
+      }
+
       #header {
         // padding-right: calc(100% - 95%);
         padding-right: calc((100% - 95%) + 450px); // Slide animation
+        @include media('mobile') {
+          padding-right: calc(100% - 95%);
+        }
       }
       .get-involved {
         right: calc((1px - 67px) + 450px);
         transition: all .5s ease-out;
+        z-index: 26;
       }
       .menu--items {
         padding-right: calc((100% - 95%) + 457px);
+        transition: all .5s ease-out;
       }
       .menu--overlay .closebtn {
       right: calc((100% - 95%) + 457px);
@@ -573,81 +713,28 @@ img {
   bottom: 20%;
   right: calc(1px - 67px);
   transition: all .5s ease-out;
+  z-index: 19;
   // box-shadow: 0 0 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
   &.sign-up {
       right: calc(1px - 67px);
       opacity: 1;
       margin-right: -450px;
   }
-}
-
-form {
-  label {
-    color: $color-white;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: $font-heading;
-    text-transform: uppercase;
-  }
-  input {
-    padding: 10px;
-    background: #fc7661;
-    color: $color-white;
-    border: 0;
+  @include media ('mobile') {
+    bottom: 0;
+    left: 0;
     width: 100%;
-    margin: 5px 0;
-    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $color-white;
-    opacity: 1;
-    }
-    &::-moz-placeholder { /* Firefox 19+ */
-    color: $color-white;
-    opacity: 1;
-    }
-    &:-ms-input-placeholder { /* IE 10+ */
-    color: $color-white;
-    opacity: 1;
-    }
-    &:-moz-placeholder { /* Firefox 18- */
-    color: $color-white;
-    opacity: 1;
-    }
-  }
-  input[name="firstname"] {
-    padding-right: 10px;
-    width: 95%;
-  }
-  input[name="lastname"],
-  label[for="lastname"] {
-    margin-left: 15px;
-    width: 90%;
-    }
-  .btn {
-  border: 0;
-  border: 3px white solid;
-  color: $color-white;
-  margin-top: 50px;
-  font-size: 15px;
-  font-weight: 700;
-  background: none;
-  &:hover {
-    background: $color-white;
-    color: $color-primary;
-  }
-  }
-  &:focus {
-    .btn {
-    background: $color-white;
-    color: $color-primary;
-    }
-  }
-  .form--short {
-    display: flex;
+    max-width: 100vw;
+    transform: rotate(0deg);
   }
 }
 
 
-// Overlay Menu
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Menu Overlay Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
 .menu--overlay {
     height: 100%;
     width: 100%;
@@ -717,4 +804,142 @@ form {
     top: 15px;
     right: 35px;
   }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Instragram Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.instagram {
+  .header--small {
+    color: $color-black;
+    font-weight: 700;
+    font-family: $font-heading;
+    transform: translate(150px, -60px);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 0 20px;
+    @include media('mobile') {
+      transform: translate(95px, -60px);
+    }
+  }
+  .container {
+    max-width: 900px;
+  }
+  img {
+    max-width: 300px;
+    max-height: 360px;
+    margin: 20px;
+  }
+}
+
+#instagram {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+  .image {
+    flex: 0 1 auto;
+    margin: 10px;
+    img {
+    max-width: 300px;
+    max-height: 300px;
+    }
+  }
+  .text {
+    background: $color-primary;
+    color: $color-white;
+    text-transform: uppercase;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    h4 {
+      font-weight: 700;
+    }
+  }
+}
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Collaberation Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.collabs--content {
+  display: flex;
+  margin-top: 74px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  @include media('mobile') {
+    flex-direction: column;
+  }
+  img {
+    max-width: 100%;
+    flex: 1;
+    display: block;
+  }
+  .collab-image {
+    max-width: 400px;
+    margin: 0 40px 0;
+  }
+  .collabs {
+    margin: 30px 30px 0;
+  }
+}
+.collab--title {
+  background: $color-black;
+  color: $color-white;
+  font-family: $font-heading;
+  padding: 30px 15%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .btn--shop {
+    width: 200px;
+    justify-self: flex-end;
+    margin: 0 20px;
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+.collab--bg {
+  height: 700px;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Pantone Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+.pantone {
+  padding: 100px 0;
+  justify-content: space-around;
+  align-items: center;
+  .pantone--items {
+    margin: 30px;
+  }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Genral Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.text-dark {
+  color: $color-black;
+}
+.color-primary {
+  color: $color-primary;
+}
+.color-primary__background {
+  background: $color-primary;
 }

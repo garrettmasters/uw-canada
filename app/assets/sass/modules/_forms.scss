@@ -9,3 +9,80 @@ $input : (
   height: 50px,
   height-large: 70px,
 );
+
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// Form CTA Styles
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+.form-group {
+   // flex:  0 1 auto;
+   // display: block;
+}
+
+form {
+  label {
+    color: $color-white;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: $font-heading;
+    text-transform: uppercase;
+  }
+  input {
+    padding: 10px;
+    background: #fc7661;
+    color: $color-white;
+    border: 0;
+    width: 100%;
+    margin: 5px 0;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color-white;
+    opacity: 1;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+    color: $color-white;
+    opacity: 1;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+    color: $color-white;
+    opacity: 1;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+    color: $color-white;
+    opacity: 1;
+    }
+  }
+  .btn {
+  border: 0;
+  border: 3px white solid;
+  color: $color-white;
+  margin-top: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  background: none;
+  &:hover {
+    background: $color-white;
+    color: $color-primary;
+  }
+  }
+  &:focus {
+    .btn {
+    background: $color-white;
+    color: $color-primary;
+    }
+  }
+  @include max('768px') {
+      .form--short {
+        display: flex;
+      }
+    input[name="firstname"] {
+      padding-right: 10px;
+      width: 95%;
+    }
+    input[name="lastname"],
+    label[for="lastname"] {
+      margin-left: 15px;
+      width: 90%;
+      }
+
+  }
+}
